@@ -1,33 +1,134 @@
 'use strict';
 
-// ===== DATA =====
+// ===== REAL PRODUCT DATA FROM LYNK.ID/IPIDIGITAL =====
 const products = [
-  { id: 1, cat: 'elektronik', icon: '💻', name: 'Laptop Gaming Pro X1', desc: 'Performa tinggi untuk gaming dan profesional.', price: 'Rp 18.500.000', badge: 'Terlaris', badgeCls: '' },
-  { id: 2, cat: 'elektronik', icon: '📱', name: 'Smartphone Ultra 5G', desc: 'Layar AMOLED 120Hz, baterai tahan lama.', price: 'Rp 7.200.000', badge: 'Baru', badgeCls: 'badge-new' },
-  { id: 3, cat: 'elektronik', icon: '🖥️', name: 'Monitor 4K Curved', desc: '32 inci, 165Hz, panel IPS, warna akurat.', price: 'Rp 9.800.000', badge: 'Hot', badgeCls: 'badge-hot' },
-  { id: 4, cat: 'aksesori', icon: '🎧', name: 'Headset Wireless Pro', desc: 'Noise cancelling, suara jernih, 30 jam baterai.', price: 'Rp 1.250.000', badge: 'Diskon', badgeCls: 'badge-sale' },
-  { id: 5, cat: 'aksesori', icon: '⌨️', name: 'Keyboard Mekanikal RGB', desc: 'Switch tactile, RGB 16 juta warna, tahan lama.', price: 'Rp 850.000', badge: 'Terlaris', badgeCls: '' },
-  { id: 6, cat: 'aksesori', icon: '🖱️', name: 'Mouse Gaming 16000 DPI', desc: 'Sensor optik presisi tinggi untuk competitive gaming.', price: 'Rp 450.000', badge: 'Baru', badgeCls: 'badge-new' },
-  { id: 7, cat: 'software', icon: '🛡️', name: 'Antivirus Premium 1 Tahun', desc: 'Perlindungan real-time, 3 perangkat sekaligus.', price: 'Rp 320.000', badge: 'Promo', badgeCls: 'badge-sale' },
-  { id: 8, cat: 'software', icon: '🎨', name: 'Design Suite Pro', desc: 'Paket lengkap untuk desainer grafis profesional.', price: 'Rp 1.800.000', badge: 'Hot', badgeCls: 'badge-hot' },
+  {
+    id: 1,
+    cat: 'prompt',
+    icon: '🧠',
+    badge: 'Best Seller',
+    badgeCls: 'badge-bestseller',
+    name: 'Neurobro Prompt: Basic, Pro, Ultra',
+    desc: '15 template prompt siap pakai untuk AI signal crypto. Output lebih rapi, tidak ngawur, format clean — fokus setup high probability. Cocok untuk scalping 2–4 jam.',
+    tiers: ['Basic', 'Pro', 'Ultra'],
+    price: 'Rp 50.000',
+    priceClass: 'price-paid',
+    note: 'Format: BUY/SELL/HOLD + Entry, SL, TP1, TP2',
+    link: 'https://lynk.id/ipidigital',
+    btnText: 'Beli Sekarang',
+    btnClass: 'btn-outline',
+  },
+  {
+    id: 2,
+    cat: 'ai',
+    icon: '🤖',
+    badge: 'Best Seller',
+    badgeCls: 'badge-bestseller',
+    name: 'Latih ChatGPT / Claude Jadi AI Trade Signaler',
+    desc: 'E-book cara melatih ChatGPT / Claude agar memahami gaya trading Anda, setup favorit, kebiasaan market XAU, dan pola fake breakout. AI semakin nyambung seiring waktu.',
+    tiers: [],
+    price: 'Rp 550.000',
+    priceClass: 'price-paid',
+    note: 'Cocok untuk: XAUUSD, Crypto, Forex, Saham',
+    link: 'https://lynk.id/ipidigital',
+    btnText: 'Beli Sekarang',
+    btnClass: 'btn-outline',
+  },
+  {
+    id: 3,
+    cat: 'ai',
+    icon: '🎯',
+    badge: 'Premium',
+    badgeCls: 'badge-hot',
+    name: 'Sniper Claude AI Signaler',
+    desc: 'Paket lengkap: E-book latih Claude untuk sniper entry + 500.000 data candle XAUUSD + Indikator Breakout V7.0. AI yang benar-benar belajar dari market & pengalaman trading Anda.',
+    tiers: [],
+    price: 'Rp 3.500.000',
+    priceClass: 'price-paid',
+    note: 'Termasuk: E-book + Data XAUUSD 500K candle + Indikator V7.0',
+    link: 'https://lynk.id/ipidigital',
+    btnText: 'Beli Sekarang',
+    btnClass: 'btn-outline',
+  },
+  {
+    id: 4,
+    cat: 'ea',
+    icon: '⚙️',
+    badge: 'Otomatis',
+    badgeCls: '',
+    name: 'Trend Following EA MT5',
+    desc: 'Expert Advisor breakout strategy untuk MT5. Single entry, tanpa martingale. Rata-rata 1–2 trade/hari. Backtest Jan–Okt 2025: profit ±$6.620, drawdown $105.',
+    tiers: [],
+    price: 'Rp 3.000.000',
+    priceClass: 'price-paid',
+    note: 'Backtest RR 1:3 | Profit ±$6.620 | 0.01 Lot',
+    link: 'https://lynk.id/ipidigital',
+    btnText: 'Beli Sekarang',
+    btnClass: 'btn-outline',
+  },
+  {
+    id: 5,
+    cat: 'indikator',
+    icon: '📊',
+    badge: 'Diskon 83%',
+    badgeCls: 'badge-new',
+    name: 'Indikator TradingView V6',
+    desc: 'Kombinasi RSI + EMA + ATR untuk deteksi reversal & tren akurat. Tersedia panduan instalasi + optimasi. Cocok untuk Forex, Crypto, dan Saham.',
+    tiers: [],
+    price: 'Rp 750.000',
+    priceClass: 'price-paid',
+    note: '~~Rp 4.500.000~~ → Rp 750.000 | Harga promo terbatas',
+    link: 'https://lynk.id/ipidigital',
+    btnText: 'Beli Sekarang',
+    btnClass: 'btn-outline',
+  },
+  {
+    id: 6,
+    cat: 'ai',
+    icon: '🆓',
+    badge: 'GRATIS',
+    badgeCls: 'badge-free',
+    name: 'AI Crypto Signal',
+    desc: 'Akses sinyal kripto berbasis AI secara gratis. Cocok untuk trader pemula yang ingin mencoba kualitas sinyal IPIDIGITAL sebelum upgrade ke paket premium.',
+    tiers: [],
+    price: 'GRATIS',
+    priceClass: 'price-free',
+    note: 'Tidak perlu pembayaran',
+    link: 'https://lynk.id/ipidigital',
+    btnText: 'Ambil Gratis',
+    btnClass: 'btn-green',
+  },
 ];
 
 const testimonials = [
-  { name: 'Andi Pratama', role: 'Mahasiswa Teknik', stars: 5, text: 'IPISTORE luar biasa! Laptop yang saya beli sampai dalam kondisi sempurna dan pengirimannya super cepat. Harga juga sangat kompetitif dibanding tempat lain.' },
-  { name: 'Siti Rahayu', role: 'Content Creator', stars: 5, text: 'Headset yang saya beli kualitasnya jauh melebihi ekspektasi. Customer service-nya ramah dan responsif. Pasti akan belanja lagi di IPISTORE!' },
-  { name: 'Budi Santoso', role: 'Software Engineer', stars: 5, text: 'Sudah 3 kali belanja di sini, selalu memuaskan. Produk original, pengiriman cepat, dan garansi resmi. Sangat direkomendasikan!' },
-  { name: 'Dewi Anggraini', role: 'Graphic Designer', stars: 5, text: 'Design Suite Pro yang saya beli di sini harganya lebih murah dari toko lain. Aktivasi mudah dan langsung bisa dipakai. Top!' },
-  { name: 'Rizky Fadhillah', role: 'Gamer & Streamer', stars: 5, text: 'Monitor curved 4K-nya mantap banget! Gambar tajam dan refresh rate tinggi bikin gaming makin seru. Packaging juga aman.' },
-  { name: 'Maya Sari', role: 'Digital Marketing', stars: 4, text: 'Pelayanan memuaskan, produk sesuai deskripsi. Proses pembayaran mudah dan konfirmasi order cepat. Recommended!' },
+  { name: 'Andi R.', role: 'Trader Crypto Futures', stars: 5, text: 'Neurobro Prompt benar-benar game changer! Sinyal AI jadi jauh lebih rapi dan terarah. Sekarang saya bisa scalping dengan lebih percaya diri karena output-nya clean banget.' },
+  { name: 'Budi S.', role: 'Trader XAU/USD', stars: 5, text: 'Habis beli e-book Latih Claude, cara pakai AI buat trading saya berubah total. AI-nya makin ngerti gaya entry saya seiring waktu. Worth banget di harga segitu!' },
+  { name: 'Citra M.', role: 'Full-time Trader', stars: 5, text: 'Sniper Claude AI Signaler paketnya lengkap banget — ada data candle 500K XAUUSD dan indikator Breakout V7. Akurasi entry saya meningkat signifikan sejak pakai ini.' },
+  { name: 'Doni P.', role: 'Trader MT5', stars: 5, text: 'EA Trend Following benar-benar autopilot! Satu kali setup, biarkan jalan. Backtest-nya jujur dan hasilnya di akun live saya cukup konsisten. Tidak martingale, aman!' },
+  { name: 'Eka W.', role: 'Trader TradingView', stars: 5, text: 'Indikator V6 dengan kombinasi RSI+EMA+ATR ini luar biasa! Sinyal reversal-nya akurat banget. Harga promo Rp750K dari Rp4.5jt itu nilai yang gila-gilaan!' },
+  { name: 'Fahri L.', role: 'Trader Pemula', stars: 5, text: 'Mulai dari AI Crypto Signal gratis dulu, langsung ketagihan kualitas sinyalnya. Akhirnya upgrade ke Neurobro Prompt. Komunitas dan support-nya juga aktif banget!' },
 ];
 
 const faqs = [
-  { q: 'Bagaimana cara melakukan pemesanan di IPISTORE?', a: 'Anda bisa memesan melalui website kami dengan memilih produk, klik "Pesan Sekarang", lalu isi formulir kontak atau hubungi kami langsung via WhatsApp. Tim kami akan memproses pesanan Anda segera.' },
-  { q: 'Apakah produk di IPISTORE original dan bergaransi?', a: 'Ya, semua produk yang kami jual adalah 100% original dan dilengkapi garansi resmi dari produsen. Kami tidak menjual produk KW atau refurbished tanpa keterangan.' },
-  { q: 'Berapa lama proses pengiriman ke seluruh Indonesia?', a: 'Pengiriman ke Jawa: 1-3 hari kerja. Luar Jawa: 3-7 hari kerja. Kami bekerja sama dengan JNE, J&T, SiCepat, dan Anteraja untuk memastikan produk sampai dengan aman dan tepat waktu.' },
-  { q: 'Metode pembayaran apa saja yang diterima?', a: 'Kami menerima transfer bank (BCA, Mandiri, BNI, BRI), e-wallet (GoPay, OVO, DANA, ShopeePay), kartu kredit/debit, dan COD untuk area tertentu.' },
-  { q: 'Apakah ada kebijakan pengembalian barang?', a: 'Ya, kami menyediakan garansi retur 7 hari jika produk yang diterima mengalami kerusakan atau tidak sesuai deskripsi. Hubungi customer service kami untuk proses retur.' },
-  { q: 'Bagaimana cara menghubungi customer service IPISTORE?', a: 'Anda bisa menghubungi kami via formulir kontak di website, email ke hello@ipistore.id, atau WhatsApp di +62 812 3456 7890. Tim kami aktif Senin–Jumat 08.00–20.00 WIB.' },
+  { q: 'Bagaimana cara mendapatkan produk setelah pembelian?', a: 'Semua produk IPIDIGITAL adalah digital dan dikirim instan. Setelah pembayaran dikonfirmasi melalui lynk.id/ipidigital, link akses atau file akan langsung dikirim ke email Anda dalam beberapa menit.' },
+  { q: 'Apakah Neurobro Prompt bisa dipakai di ChatGPT dan Claude?', a: 'Ya! Neurobro Prompt dirancang agar kompatibel dengan ChatGPT, Claude, dan AI assistant lainnya. Cukup copy-paste prompt ke AI pilihan Anda dan hasilnya akan langsung rapi dan terstruktur.' },
+  { q: 'EA MT5 apakah aman? Apakah menggunakan martingale?', a: 'EA Trend Following menggunakan sistem single entry — TIDAK ada martingale dan TIDAK ada averaging. Ini artinya risiko per trade terkontrol. Selalu gunakan money management yang baik dan lakukan backtest sendiri sebelum live trading.' },
+  { q: 'Indikator TradingView V6 bekerja di timeframe berapa?', a: 'Indikator V6 bekerja di semua timeframe TradingView. Sinyal di TF berbeda akan berbeda karena indikator membaca data candle yang berbeda — ini justru kelebihan, Anda bisa konfirmasi arah tren di TF besar dan entry di TF kecil.' },
+  { q: 'Apa perbedaan Latih Claude (Rp550K) dengan Sniper Claude AI (Rp3.5jt)?', a: 'Latih Claude (Rp550K) adalah e-book panduan cara melatih AI untuk memahami gaya trading Anda. Sniper Claude AI (Rp3.5jt) adalah paket lengkap yang mencakup e-book + 500.000 data candle XAUUSD + Indikator Breakout V7.0 untuk sniper entry.' },
+  { q: 'Apakah ada garansi profit dari produk ini?', a: 'Trading adalah aktivitas berisiko tinggi dan tidak ada yang bisa menjamin profit. Produk kami adalah tools bantu untuk meningkatkan akurasi dan disiplin trading. Selalu gunakan manajemen risiko yang baik. Data backtest adalah hasil historis, bukan jaminan performa masa depan.' },
+  { q: 'Bagaimana cara memulai Challenge Crypto & XAU dengan modal $10?', a: 'Daftar exchange OKX, deposit minimal $10, lalu hubungi kami via kontak atau lynk.id/ipidigital untuk mendapatkan panduan strategi challenge. Tim kami akan memandu Anda step by step.' },
+];
+
+// ===== TICKER DATA (simulated live prices) =====
+const tickerData = [
+  { name: 'BTC/USDT', price: '107,234', change: '+2.31%', up: true },
+  { name: 'ETH/USDT', price: '3,891', change: '+1.87%', up: true },
+  { name: 'XAU/USD', price: '3,248.50', change: '-0.42%', up: false },
+  { name: 'SOL/USDT', price: '182.40', change: '+4.12%', up: true },
+  { name: 'EUR/USD', price: '1.0892', change: '-0.18%', up: false },
+  { name: 'BNB/USDT', price: '712.30', change: '+0.95%', up: true },
+  { name: 'ADA/USDT', price: '0.847', change: '+3.20%', up: true },
+  { name: 'XRP/USDT', price: '2.341', change: '-1.05%', up: false },
 ];
 
 // ===== LOADING SCREEN =====
@@ -35,49 +136,64 @@ const faqs = [
   document.body.classList.add('loading');
   const fill = document.getElementById('loaderFill');
   const loader = document.getElementById('loader');
-  let progress = 0;
+  const tickerEl = document.getElementById('loaderTicker');
+  const msgs = ['Memuat data pasar...', 'Menghubungkan ke OKX...', 'Sinkronisasi indikator...', 'Siap trading!'];
+  let mi = 0, progress = 0;
+
+  const msgInterval = setInterval(() => {
+    if (tickerEl) tickerEl.textContent = msgs[Math.min(mi++, msgs.length - 1)];
+  }, 400);
 
   const interval = setInterval(() => {
-    progress += Math.random() * 18 + 5;
+    progress += Math.random() * 20 + 8;
     if (progress >= 100) {
       progress = 100;
-      clearInterval(interval);
       fill.style.width = '100%';
+      clearInterval(interval);
+      clearInterval(msgInterval);
       setTimeout(() => {
         loader.classList.add('hidden');
         document.body.classList.remove('loading');
-      }, 400);
+      }, 350);
     } else {
       fill.style.width = progress + '%';
     }
-  }, 80);
+  }, 70);
+})();
+
+// ===== TICKER BAR =====
+(function initTicker() {
+  const track = document.getElementById('tickerTrack');
+  if (!track) return;
+  const items = [...tickerData, ...tickerData]; // duplicate for seamless loop
+  track.innerHTML = items.map(t => `
+    <span class="ticker-item">
+      <span class="t-name">${t.name}</span>
+      <span class="t-price">${t.price}</span>
+      <span class="${t.up ? 't-up' : 't-down'}">${t.up ? '▲' : '▼'} ${t.change}</span>
+    </span>
+    <span class="ticker-sep">|</span>
+  `).join('');
 })();
 
 // ===== SCROLL PROGRESS =====
 const scrollBar = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
   const max = document.body.scrollHeight - window.innerHeight;
-  scrollBar.style.width = (window.scrollY / max * 100) + '%';
+  if (scrollBar) scrollBar.style.width = (window.scrollY / max * 100) + '%';
 }, { passive: true });
 
-// ===== NAVBAR SCROLL + ACTIVE LINK =====
+// ===== NAVBAR =====
 const navbar = document.getElementById('navbar');
 const navSections = document.querySelectorAll('section[id]');
-
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-
-  // back-to-top visibility
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 60);
   const btt = document.getElementById('backToTop');
-  btt.classList.toggle('show', window.scrollY > 400);
-
-  // active link
+  if (btt) btt.classList.toggle('show', window.scrollY > 400);
   const scrollY = window.scrollY + 100;
   navSections.forEach(sec => {
-    const id = sec.getAttribute('id');
-    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-    if (!link) return;
-    link.classList.toggle('active', scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight);
+    const link = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+    if (link) link.classList.toggle('active', scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight);
   });
 }, { passive: true });
 
@@ -85,128 +201,85 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
-  const isOpen = hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open', isOpen);
-  hamburger.setAttribute('aria-expanded', String(isOpen));
+  const open = hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
 });
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-  });
-});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}));
 
 // ===== BACK TO TOP =====
-document.getElementById('backToTop').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+const bttBtn = document.getElementById('backToTop');
+if (bttBtn) bttBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // ===== TYPEWRITER =====
 (function initTypewriter() {
   const texts = [
-    'Produk Terpilih, Kualitas Terjamin.',
-    'Pengiriman Cepat ke Seluruh Indonesia.',
-    'Garansi Resmi Setiap Produk.',
-    'Harga Terbaik, Layanan Prima.',
+    'Indikator TradingView yang Presisi.',
+    'AI Signaler untuk XAUUSD & Crypto.',
+    'EA MT5 Otomatis Tanpa Emosi.',
+    'Prompt AI untuk Signal Berkualitas.',
+    'Trading Cerdas dengan Tools Modern.',
   ];
   const el = document.getElementById('typewriter');
   if (!el) return;
   let ti = 0, ci = 0, deleting = false;
-
   function type() {
-    const current = texts[ti];
-    el.textContent = deleting ? current.slice(0, ci--) : current.slice(0, ci++);
-    let delay = deleting ? 40 : 70;
-    if (!deleting && ci > current.length) { delay = 2000; deleting = true; }
+    const cur = texts[ti];
+    el.textContent = deleting ? cur.slice(0, ci--) : cur.slice(0, ci++);
+    let delay = deleting ? 35 : 65;
+    if (!deleting && ci > cur.length) { delay = 2000; deleting = true; }
     else if (deleting && ci < 0) { deleting = false; ci = 0; ti = (ti + 1) % texts.length; delay = 400; }
     setTimeout(type, delay);
   }
-  setTimeout(type, 1200);
+  setTimeout(type, 1500);
 })();
 
-// ===== PARTICLES CANVAS =====
+// ===== PARTICLES =====
 (function initParticles() {
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  let particles = [];
-  let animId;
-
-  function resize() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
+  const pts = [];
+  function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
   resize();
   window.addEventListener('resize', resize, { passive: true });
-
-  for (let i = 0; i < 60; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5 + 0.3,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      alpha: Math.random() * 0.5 + 0.1,
-    });
-  }
-
-  function draw() {
+  for (let i = 0; i < 55; i++) pts.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3, r: Math.random() * 1.4 + 0.3, a: Math.random() * 0.45 + 0.1 });
+  (function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
+    pts.forEach(p => {
       p.x = (p.x + p.vx + canvas.width) % canvas.width;
       p.y = (p.y + p.vy + canvas.height) % canvas.height;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,170,255,${p.alpha})`;
-      ctx.fill();
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,170,255,${p.a})`; ctx.fill();
     });
-    // draw lines between close particles
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,170,255,${0.08 * (1 - dist / 100)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.sqrt(dx * dx + dy * dy);
+      if (d < 95) { ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.strokeStyle = `rgba(0,170,255,${0.07 * (1 - d / 95)})`; ctx.lineWidth = 0.5; ctx.stroke(); }
     }
-    animId = requestAnimationFrame(draw);
-  }
-  draw();
+    requestAnimationFrame(draw);
+  })();
 })();
 
 // ===== FADE-IN OBSERVER =====
 function observeFadeIns() {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
+  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 }
 
-// ===== COUNTER ANIMATION =====
+// ===== COUNTERS =====
 (function initCounters() {
-  const io = new IntersectionObserver((entries) => {
+  const io = new IntersectionObserver(entries => {
     if (!entries[0].isIntersecting) return;
     io.disconnect();
     document.querySelectorAll('.stat-num').forEach(el => {
       const target = +el.dataset.target;
-      const duration = 1600;
-      const step = target / (duration / 16);
       let cur = 0;
-      const t = setInterval(() => {
-        cur = Math.min(cur + step, target);
-        el.textContent = Math.floor(cur).toLocaleString('id-ID');
-        if (cur >= target) clearInterval(t);
-      }, 16);
+      const step = target / (1500 / 16);
+      const t = setInterval(() => { cur = Math.min(cur + step, target); el.textContent = Math.floor(cur).toLocaleString('id-ID'); if (cur >= target) clearInterval(t); }, 16);
     });
   }, { threshold: 0.3 });
   const about = document.getElementById('about');
@@ -219,18 +292,32 @@ function renderProducts(filter) {
   if (!grid) return;
   const list = (!filter || filter === 'all') ? products : products.filter(p => p.cat === filter);
   grid.innerHTML = '';
+
+  if (list.length === 0) {
+    grid.innerHTML = '<p style="color:var(--text-dim);text-align:center;grid-column:1/-1;padding:2rem">Tidak ada produk di kategori ini.</p>';
+    return;
+  }
+
   list.forEach((p, i) => {
     const card = document.createElement('div');
     card.className = 'product-card fade-in';
     card.style.transitionDelay = (i * 0.07) + 's';
+
+    const tiers = p.tiers.length ? `<div class="product-tiers">${p.tiers.map(t => `<span class="tier-chip">${t}</span>`).join('')}</div>` : '';
+    const noteHtml = p.note ? `<div class="product-price-note">${p.note.replace(/~~(.+?)~~/g, '<s>$1</s>')}</div>` : '';
+    const btnClass = p.btnClass || 'btn-outline';
+    const btnColor = p.priceClass === 'price-free' ? 'btn-green' : btnClass;
+
     card.innerHTML = `
       <div class="product-stripe"></div>
       <span class="product-badge ${p.badgeCls}">${p.badge}</span>
       <div class="product-icon">${p.icon}</div>
       <h3>${p.name}</h3>
       <p class="product-desc">${p.desc}</p>
-      <div class="product-price">${p.price}</div>
-      <a href="#contact" class="btn btn-outline">Pesan Sekarang</a>
+      ${tiers}
+      <div class="product-price ${p.priceClass}">${p.price}</div>
+      ${noteHtml}
+      <a href="${p.link}" target="_blank" rel="noopener" class="btn ${btnColor}">${p.btnText} ↗</a>
     `;
     grid.appendChild(card);
   });
@@ -250,71 +337,41 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   const track = document.getElementById('testiTrack');
   const dotsEl = document.getElementById('testiDots');
   if (!track || !dotsEl) return;
-
   testimonials.forEach((t, i) => {
     const stars = '★'.repeat(t.stars) + '☆'.repeat(5 - t.stars);
     const initials = t.name.split(' ').map(w => w[0]).join('').slice(0, 2);
     const card = document.createElement('div');
     card.className = 'testi-card fade-in';
-    card.innerHTML = `
-      <div class="testi-stars">${stars}</div>
-      <p class="testi-text">"${t.text}"</p>
-      <div class="testi-author">
-        <div class="testi-avatar">${initials}</div>
-        <div>
-          <div class="testi-name">${t.name}</div>
-          <div class="testi-role">${t.role}</div>
-        </div>
-      </div>
-    `;
+    card.innerHTML = `<div class="testi-stars">${stars}</div><p class="testi-text">"${t.text}"</p><div class="testi-author"><div class="testi-avatar">${initials}</div><div><div class="testi-name">${t.name}</div><div class="testi-role">${t.role}</div></div></div>`;
     track.appendChild(card);
-
     const dot = document.createElement('button');
     dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
     dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-    dot.addEventListener('click', () => goTo(i));
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
     dotsEl.appendChild(dot);
   });
 
   let current = 0;
-  let perView = getPerView();
-  let maxIdx = Math.ceil(testimonials.length / perView) - 1;
-  let autoTimer;
-
-  function getPerView() {
-    return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
-  }
-  function getCardWidth() {
-    const firstCard = track.querySelector('.testi-card');
-    if (!firstCard) return 0;
-    const gap = 24;
-    return firstCard.offsetWidth + gap;
-  }
+  function perView() { return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1100 ? 2 : 3; }
+  function maxIdx() { return Math.ceil(testimonials.length / perView()) - 1; }
+  function cardW() { const c = track.querySelector('.testi-card'); return c ? c.offsetWidth + 24 : 0; }
   function goTo(idx) {
-    perView = getPerView();
-    maxIdx = Math.ceil(testimonials.length / perView) - 1;
-    current = Math.max(0, Math.min(idx, maxIdx));
-    const offset = current * perView * getCardWidth();
-    track.style.transform = `translateX(-${offset}px)`;
+    current = Math.max(0, Math.min(idx, maxIdx()));
+    track.style.transform = `translateX(-${current * perView() * cardW()}px)`;
     document.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
-  function next() { goTo(current >= maxIdx ? 0 : current + 1); }
-  function prev() { goTo(current <= 0 ? maxIdx : current - 1); }
-
-  document.getElementById('testiNext').addEventListener('click', () => { next(); resetAuto(); });
-  document.getElementById('testiPrev').addEventListener('click', () => { prev(); resetAuto(); });
-
-  function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(next, 5000); }
-  resetAuto();
-
+  let autoTimer;
+  function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => goTo(current >= maxIdx() ? 0 : current + 1), 5000); }
+  document.getElementById('testiNext').addEventListener('click', () => { goTo(current >= maxIdx() ? 0 : current + 1); resetAuto(); });
+  document.getElementById('testiPrev').addEventListener('click', () => { goTo(current <= 0 ? maxIdx() : current - 1); resetAuto(); });
   window.addEventListener('resize', () => goTo(0), { passive: true });
+  resetAuto();
 })();
 
 // ===== RENDER FAQ =====
 (function initFAQ() {
   const grid = document.getElementById('faqGrid');
   if (!grid) return;
-
   faqs.forEach((f, i) => {
     const item = document.createElement('div');
     item.className = 'faq-item fade-in';
@@ -323,29 +380,23 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         <span>${f.q}</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-answer" id="faq-a-${i}" role="region">
+      <div class="faq-answer" id="faq-a-${i}">
         <div class="faq-answer-inner">${f.a}</div>
       </div>
     `;
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
+    const q = item.querySelector('.faq-question');
+    const a = item.querySelector('.faq-answer');
     const inner = item.querySelector('.faq-answer-inner');
-
     function toggle() {
-      const isOpen = item.classList.toggle('open');
-      answer.style.maxHeight = isOpen ? inner.scrollHeight + 'px' : '0';
-      question.setAttribute('aria-expanded', String(isOpen));
-      // close siblings
+      const open = item.classList.toggle('open');
+      a.style.maxHeight = open ? inner.scrollHeight + 'px' : '0';
+      q.setAttribute('aria-expanded', String(open));
       document.querySelectorAll('.faq-item.open').forEach(sib => {
-        if (sib !== item) {
-          sib.classList.remove('open');
-          sib.querySelector('.faq-answer').style.maxHeight = '0';
-          sib.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        }
+        if (sib !== item) { sib.classList.remove('open'); sib.querySelector('.faq-answer').style.maxHeight = '0'; sib.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); }
       });
     }
-    question.addEventListener('click', toggle);
-    question.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
     grid.appendChild(item);
   });
 })();
@@ -354,79 +405,35 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 (function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
-
   function validate() {
-    let valid = true;
+    let ok = true;
     const name = document.getElementById('cname');
-    const email = document.getElementById('cemail');
+    const contact = document.getElementById('cemail');
     const msg = document.getElementById('cmessage');
-
-    const nameErr = document.getElementById('nameError');
-    const emailErr = document.getElementById('emailError');
-    const msgErr = document.getElementById('messageError');
-
-    nameErr.textContent = '';
-    emailErr.textContent = '';
-    msgErr.textContent = '';
-    name.classList.remove('error');
-    email.classList.remove('error');
-    msg.classList.remove('error');
-
-    if (!name.value.trim()) {
-      nameErr.textContent = 'Nama tidak boleh kosong.';
-      name.classList.add('error');
-      valid = false;
-    }
-    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRx.test(email.value.trim())) {
-      emailErr.textContent = 'Format email tidak valid.';
-      email.classList.add('error');
-      valid = false;
-    }
-    if (!msg.value.trim()) {
-      msgErr.textContent = 'Pesan tidak boleh kosong.';
-      msg.classList.add('error');
-      valid = false;
-    }
-    return valid;
+    [name, contact, msg].forEach(el => { el.classList.remove('error'); });
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('messageError').textContent = '';
+    if (!name.value.trim()) { document.getElementById('nameError').textContent = 'Nama tidak boleh kosong.'; name.classList.add('error'); ok = false; }
+    if (!contact.value.trim()) { document.getElementById('emailError').textContent = 'Email atau WhatsApp wajib diisi.'; contact.classList.add('error'); ok = false; }
+    if (!msg.value.trim()) { document.getElementById('messageError').textContent = 'Pesan tidak boleh kosong.'; msg.classList.add('error'); ok = false; }
+    return ok;
   }
-
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     if (!validate()) return;
-
     const btn = document.getElementById('submitBtn');
     const text = document.getElementById('submitText');
-    const spinner = document.getElementById('submitSpinner');
-    btn.disabled = true;
-    text.style.display = 'none';
-    spinner.style.display = 'inline-block';
-
+    const spin = document.getElementById('submitSpinner');
+    btn.disabled = true; text.style.display = 'none'; spin.style.display = 'inline-block';
     setTimeout(() => {
-      btn.disabled = false;
-      text.style.display = 'inline';
-      spinner.style.display = 'none';
+      btn.disabled = false; text.style.display = 'inline'; spin.style.display = 'none';
       document.getElementById('formSuccess').classList.add('show');
       form.reset();
       setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 6000);
-    }, 1500);
+    }, 1400);
   });
 })();
-
-// ===== NEWSLETTER =====
-document.getElementById('newsletterBtn').addEventListener('click', () => {
-  const input = document.getElementById('newsletterEmail');
-  const msg = document.getElementById('newsletterMsg');
-  const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRx.test(input.value.trim())) {
-    msg.textContent = 'Masukkan email yang valid.';
-    msg.style.color = '#ff6060';
-    return;
-  }
-  msg.textContent = 'Terima kasih! Anda telah berlangganan newsletter kami.';
-  msg.style.color = '';
-  input.value = '';
-});
 
 // ===== INIT =====
 renderProducts('all');

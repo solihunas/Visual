@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IPISTORE - Toko Digital Masa Depan. Produk terpilih, kualitas terjamin." />
-  <title>IPISTORE – Toko Digital Masa Depan</title>
+  <meta name="description" content="IPIDIGITAL – Tools Trading Cerdas: Indikator TradingView, EA MT5, dan AI Signaler terbaik untuk trader profesional." />
+  <title>IPIDIGITAL – Trading Cerdas dengan Tools Modern</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,9 +12,9 @@
   <!-- LOADING SCREEN -->
   <div class="loader" id="loader">
     <div class="loader-inner">
-      <div class="loader-logo">IPI<span>STORE</span></div>
+      <div class="loader-logo">IPI<span>DIGITAL</span></div>
+      <div class="loader-ticker" id="loaderTicker">Memuat data pasar...</div>
       <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
-      <p class="loader-text">Memuat pengalaman terbaik...</p>
     </div>
   </div>
 
@@ -23,11 +23,12 @@
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
-    <div class="nav-brand">IPI<span>STORE</span></div>
+    <div class="nav-brand">IPI<span>DIGITAL</span></div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#hero">Beranda</a></li>
       <li><a href="#about">Tentang</a></li>
       <li><a href="#products">Produk</a></li>
+      <li><a href="#backtest">Backtest</a></li>
       <li><a href="#testimonials">Testimoni</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Kontak</a></li>
@@ -42,25 +43,28 @@
     <div class="hero-bg"></div>
     <canvas class="hero-particles" id="heroCanvas"></canvas>
     <div class="hero-content">
-      <div class="hero-badge">&#128640; Platform Digital Terpercaya</div>
+      <div class="hero-badge">&#9889; Trading Cerdas dengan Tools Modern</div>
       <p class="hero-tag">Selamat Datang di</p>
-      <h1 class="hero-title">IPI<span>STORE</span></h1>
+      <h1 class="hero-title">IPI<span>DIGITAL</span></h1>
       <p class="hero-sub">
         <span id="typewriter"></span><span class="cursor">|</span>
       </p>
       <div class="hero-btns">
-        <a href="#products" class="btn btn-primary">
-          <span>Lihat Produk</span> &#8594;
-        </a>
-        <a href="#about" class="btn btn-outline">Tentang Kami</a>
+        <a href="#products" class="btn btn-primary">&#128200; Lihat Produk</a>
+        <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" class="btn btn-outline">&#128722; Beli di Lynk.id</a>
       </div>
       <div class="hero-trust">
+        <span>&#9989; 100% Digital</span>
+        <span>&#9989; Pengiriman Instan</span>
+        <span>&#9989; Support Aktif</span>
         <span>&#9989; Terpercaya</span>
-        <span>&#9989; Bergaransi</span>
-        <span>&#9989; Pengiriman Cepat</span>
       </div>
     </div>
     <div class="hero-grid"></div>
+    <!-- Live ticker bar -->
+    <div class="ticker-bar">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
     <a href="#about" class="scroll-hint" aria-label="Scroll ke bawah">
       <div class="scroll-arrow"></div>
     </a>
@@ -70,60 +74,60 @@
   <section class="about section" id="about">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Siapa Kami</span>
-        <h2 class="section-title">Tentang <span>Kami</span></h2>
-        <p class="section-sub">Destinasi belanja digital terdepan di Indonesia</p>
+        <span class="section-label">Tentang Kami</span>
+        <h2 class="section-title">Trader <span>Cerdas</span> Pakai Tools Modern</h2>
+        <p class="section-sub">IPIDIGITAL hadir untuk membantu trader meningkatkan akurasi dan efisiensi trading mereka</p>
       </div>
       <div class="about-grid">
         <div class="about-text fade-in">
           <p>
-            <strong>IPISTORE</strong> adalah platform toko digital modern yang hadir untuk memenuhi
-            kebutuhan Anda dengan produk-produk berkualitas tinggi. Kami berkomitmen memberikan
-            pengalaman belanja yang mudah, cepat, dan terpercaya.
+            <strong>IPIDIGITAL</strong> adalah penyedia tools trading digital terpercaya yang menyediakan
+            Indikator TradingView, Expert Advisor MT5, dan AI Signaler berbasis kecerdasan buatan.
           </p>
           <p>
-            Didirikan dengan visi menjadi destinasi belanja digital terdepan, IPISTORE terus
-            berinovasi menghadirkan produk-produk pilihan dari berbagai kategori dengan harga terbaik.
+            Kami percaya bahwa setiap trader — dari pemula hingga profesional — berhak mendapatkan
+            akses ke teknologi trading terbaik. Semua produk kami dirancang untuk membantu Anda
+            mengambil keputusan trading yang lebih akurat dan konsisten.
           </p>
           <div class="about-stats">
             <div class="stat fade-in">
               <span class="stat-num" data-target="500">0</span><span class="stat-suffix">+</span>
-              <p>Produk</p>
+              <p>Trader Aktif</p>
             </div>
             <div class="stat fade-in">
-              <span class="stat-num" data-target="10000">0</span><span class="stat-suffix">+</span>
-              <p>Pelanggan</p>
+              <span class="stat-num" data-target="14">0</span><span class="stat-suffix">x</span>
+              <p>Trade/Hari</p>
             </div>
             <div class="stat fade-in">
-              <span class="stat-num" data-target="99">0</span><span class="stat-suffix">%</span>
-              <p>Kepuasan</p>
+              <span class="stat-num" data-target="42">0</span><span class="stat-suffix">%</span>
+              <p>Winrate</p>
             </div>
             <div class="stat fade-in">
-              <span class="stat-num" data-target="5">0</span><span class="stat-suffix">th</span>
-              <p>Pengalaman</p>
+              <span class="stat-num" data-target="2">0</span><span class="stat-suffix">:1</span>
+              <p>Risk Reward</p>
             </div>
           </div>
         </div>
         <div class="about-cards">
           <div class="about-card fade-in">
-            <div class="card-icon">&#128640;</div>
-            <h3>Pengiriman Cepat</h3>
-            <p>Produk sampai di tangan Anda dengan cepat dan aman ke seluruh Indonesia.</p>
+            <div class="card-icon">&#129302;</div>
+            <h3>AI-Powered Signals</h3>
+            <p>Signaler berbasis Claude AI & ChatGPT yang dilatih khusus untuk analisis pasar kripto dan forex.</p>
+          </div>
+          <div class="about-card fade-in">
+            <div class="card-icon">&#128200;</div>
+            <h3>Indikator Presisi</h3>
+            <p>Indikator TradingView V6 dengan algoritma canggih untuk deteksi tren dan entry point akurat.</p>
+          </div>
+          <div class="about-card fade-in">
+            <div class="card-icon">&#129302;</div>
+            <h3>EA MT5 Otomatis</h3>
+            <p>Expert Advisor Trend Following untuk MT5 — trading otomatis 24 jam tanpa perlu monitor terus.</p>
           </div>
           <div class="about-card fade-in">
             <div class="card-icon">&#128274;</div>
-            <h3>Transaksi Aman</h3>
-            <p>Sistem keamanan SSL berlapis untuk melindungi data dan transaksi Anda.</p>
-          </div>
-          <div class="about-card fade-in">
-            <div class="card-icon">&#128142;</div>
-            <h3>Kualitas Premium</h3>
-            <p>Hanya produk original bergaransi resmi yang kami hadirkan untuk Anda.</p>
-          </div>
-          <div class="about-card fade-in">
-            <div class="card-icon">&#127911;</div>
-            <h3>Support 24/7</h3>
-            <p>Tim customer service kami siap membantu Anda kapan saja, di mana saja.</p>
+            <h3>Support Aktif</h3>
+            <p>Tim kami siap membantu setup, konfigurasi, dan menjawab pertanyaan trading Anda.</p>
           </div>
         </div>
       </div>
@@ -134,17 +138,76 @@
   <section class="products section" id="products">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Katalog</span>
-        <h2 class="section-title">Produk <span>Kami</span></h2>
-        <p class="section-sub">Temukan produk terbaik pilihan kami dengan harga terjangkau</p>
+        <span class="section-label">Katalog Produk</span>
+        <h2 class="section-title">Tools <span>Trading</span> Kami</h2>
+        <p class="section-sub">Pilih tools yang sesuai dengan gaya dan kebutuhan trading Anda</p>
       </div>
       <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="elektronik">Elektronik</button>
-        <button class="filter-btn" data-filter="aksesori">Aksesori</button>
-        <button class="filter-btn" data-filter="software">Software</button>
+        <button class="filter-btn" data-filter="ai">AI Signaler</button>
+        <button class="filter-btn" data-filter="indikator">Indikator</button>
+        <button class="filter-btn" data-filter="ea">EA / Bot</button>
+        <button class="filter-btn" data-filter="prompt">AI Prompt</button>
       </div>
       <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- BACKTEST -->
+  <section class="backtest section" id="backtest">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Data Performa</span>
+        <h2 class="section-title">Hasil <span>Backtest</span></h2>
+        <p class="section-sub">Data nyata dari pengujian strategi kami di exchange OKX</p>
+      </div>
+      <div class="backtest-grid">
+        <div class="backtest-card fade-in">
+          <div class="bt-icon">&#127381;</div>
+          <div class="bt-label">Exchange</div>
+          <div class="bt-value">OKX</div>
+        </div>
+        <div class="backtest-card fade-in">
+          <div class="bt-icon">&#9878;&#65039;</div>
+          <div class="bt-label">Risk : Reward</div>
+          <div class="bt-value accent">1 : 2</div>
+        </div>
+        <div class="backtest-card fade-in">
+          <div class="bt-icon">&#128293;</div>
+          <div class="bt-label">Trade Rate</div>
+          <div class="bt-value">14 trade/hari</div>
+        </div>
+        <div class="backtest-card fade-in">
+          <div class="bt-icon">&#127919;</div>
+          <div class="bt-label">Winrate</div>
+          <div class="bt-value accent">42.8%</div>
+        </div>
+      </div>
+      <div class="backtest-note fade-in">
+        <p>&#9888;&#65039; <strong>Disclaimer:</strong> Data backtest adalah hasil pengujian historis dan bukan jaminan profit di masa depan. Trading aset kripto dan forex mengandung risiko. Selalu gunakan manajemen risiko yang baik.</p>
+      </div>
+      <div class="challenge-banner fade-in">
+        <div class="challenge-left">
+          <span class="section-label">Special Challenge</span>
+          <h3>Challenge Crypto &amp; XAU<br/>Modal <span class="accent">$10</span></h3>
+          <p>Uji strategi kami dengan modal minimal. Cocok untuk trader yang ingin memulai dengan risiko kecil sambil belajar.</p>
+          <a href="#contact" class="btn btn-primary">Ikut Challenge &#8594;</a>
+        </div>
+        <div class="challenge-right">
+          <div class="challenge-stat">
+            <span>Crypto</span><span class="tag">BTC / ETH / Alt</span>
+          </div>
+          <div class="challenge-stat">
+            <span>XAU/USD</span><span class="tag">Gold Trading</span>
+          </div>
+          <div class="challenge-stat">
+            <span>Modal Awal</span><span class="tag green">$10 saja!</span>
+          </div>
+          <div class="challenge-stat">
+            <span>Exchange</span><span class="tag">OKX</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -152,9 +215,9 @@
   <section class="testimonials section" id="testimonials">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Ulasan Pelanggan</span>
+        <span class="section-label">Ulasan Trader</span>
         <h2 class="section-title">Kata <span>Mereka</span></h2>
-        <p class="section-sub">Ribuan pelanggan puas telah mempercayai IPISTORE</p>
+        <p class="section-sub">Ratusan trader telah menggunakan tools IPIDIGITAL</p>
       </div>
       <div class="testi-wrapper">
         <div class="testi-track" id="testiTrack"></div>
@@ -172,8 +235,8 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Pertanyaan Umum</span>
-        <h2 class="section-title">FAQ <span>Kami</span></h2>
-        <p class="section-sub">Jawaban untuk pertanyaan yang sering ditanyakan</p>
+        <h2 class="section-title">FAQ <span>Trading</span></h2>
+        <p class="section-sub">Pertanyaan yang sering ditanyakan seputar produk dan layanan kami</p>
       </div>
       <div class="faq-grid" id="faqGrid"></div>
     </div>
@@ -184,72 +247,83 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Hubungi Kami</span>
-        <h2 class="section-title">Ada <span>Pertanyaan?</span></h2>
-        <p class="section-sub">Kami siap menjawab dan membantu Anda</p>
+        <h2 class="section-title">Siap <span>Mulai Trading?</span></h2>
+        <p class="section-sub">Konsultasi gratis, kami bantu pilih tools yang tepat untuk Anda</p>
       </div>
       <div class="contact-grid">
         <div class="contact-info fade-in">
           <div class="info-item">
-            <span class="info-icon">&#128205;</span>
+            <span class="info-icon">&#128279;</span>
             <div>
-              <h4>Alamat</h4>
-              <p>Jl. Digital No. 1, Kota Teknologi, Indonesia</p>
+              <h4>Toko Online</h4>
+              <p><a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" style="color:var(--blue)">lynk.id/ipidigital</a></p>
             </div>
           </div>
           <div class="info-item">
-            <span class="info-icon">&#128222;</span>
+            <span class="info-icon">&#128172;</span>
             <div>
-              <h4>Telepon</h4>
-              <p>+62 812 3456 7890</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">&#9993;&#65039;</span>
-            <div>
-              <h4>Email</h4>
-              <p>hello@ipistore.id</p>
+              <h4>WhatsApp / Telegram</h4>
+              <p>Hubungi kami untuk pembelian &amp; support langsung</p>
             </div>
           </div>
           <div class="info-item">
             <span class="info-icon">&#9200;</span>
             <div>
-              <h4>Jam Operasional</h4>
-              <p>Senin – Jumat: 08.00 – 20.00 WIB</p>
+              <h4>Jam Respon</h4>
+              <p>Setiap hari 08.00 – 22.00 WIB</p>
             </div>
           </div>
-          <div class="contact-map">
-            <div class="map-placeholder">
-              <span>&#128506;</span>
-              <p>Lihat di Google Maps</p>
+          <div class="info-item">
+            <span class="info-icon">&#9889;</span>
+            <div>
+              <h4>Pengiriman Produk</h4>
+              <p>Instan setelah pembayaran dikonfirmasi</p>
             </div>
+          </div>
+          <div class="cta-box fade-in">
+            <h4>Beli Langsung di Toko Kami</h4>
+            <p>Pembayaran mudah dan produk langsung dikirim setelah konfirmasi.</p>
+            <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1rem">
+              &#128722; Kunjungi Lynk.id/ipidigital
+            </a>
           </div>
         </div>
         <form class="contact-form fade-in" id="contactForm" novalidate>
           <div class="form-group">
-            <label for="cname">Nama Lengkap <span class="required">*</span></label>
-            <input type="text" id="cname" placeholder="Nama Lengkap Anda" required autocomplete="name" />
+            <label for="cname">Nama <span class="required">*</span></label>
+            <input type="text" id="cname" placeholder="Nama Anda" required autocomplete="name" />
             <span class="field-error" id="nameError"></span>
           </div>
           <div class="form-group">
-            <label for="cemail">Email <span class="required">*</span></label>
-            <input type="email" id="cemail" placeholder="email@contoh.com" required autocomplete="email" />
+            <label for="cemail">Email / WhatsApp <span class="required">*</span></label>
+            <input type="text" id="cemail" placeholder="Email atau nomor WhatsApp Anda" required />
             <span class="field-error" id="emailError"></span>
           </div>
           <div class="form-group">
-            <label for="csubject">Subjek</label>
-            <input type="text" id="csubject" placeholder="Topik pertanyaan Anda" />
+            <label for="cproduct">Produk yang Diminati</label>
+            <select id="cproduct">
+              <option value="">-- Pilih Produk --</option>
+              <option>Neurobro Prompt (Basic / Pro / Ultra)</option>
+              <option>Latih ChatGPT / Claude Jadi AI Trade Signaler</option>
+              <option>Sniper Claude AI Signaler</option>
+              <option>Trend Following EA MT5</option>
+              <option>Indikator TradingView V6</option>
+              <option>AI Crypto Signal (FREE)</option>
+              <option>Challenge Crypto &amp; XAU</option>
+              <option>Lainnya / Konsultasi</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="cmessage">Pesan <span class="required">*</span></label>
-            <textarea id="cmessage" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+            <textarea id="cmessage" rows="4" placeholder="Ceritakan kebutuhan trading Anda, pengalaman, dan pertanyaan..." required></textarea>
             <span class="field-error" id="messageError"></span>
           </div>
           <button type="submit" class="btn btn-primary" id="submitBtn">
-            <span id="submitText">Kirim Pesan</span>
+            <span id="submitText">&#128231; Kirim Pesan</span>
             <span id="submitSpinner" class="spinner" style="display:none"></span>
           </button>
           <p class="form-success" id="formSuccess">
-            &#10003; Pesan berhasil dikirim! Kami akan segera menghubungi Anda.
+            &#10003; Pesan terkirim! Kami akan segera menghubungi Anda.
           </p>
         </form>
       </div>
@@ -262,20 +336,19 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="nav-brand footer-logo">IPI<span>STORE</span></div>
-          <p>Toko Digital Masa Depan. Kualitas terjamin, layanan terbaik untuk setiap pelanggan kami.</p>
-          <div class="footer-newsletter">
-            <input type="email" id="newsletterEmail" placeholder="Email untuk newsletter" aria-label="Email newsletter" />
-            <button type="button" id="newsletterBtn" class="btn btn-primary">Daftar</button>
-          </div>
-          <p class="newsletter-msg" id="newsletterMsg"></p>
+          <div class="nav-brand footer-logo">IPI<span>DIGITAL</span></div>
+          <p>Tools Trading Cerdas — Indikator, EA MT5, dan AI Signaler untuk trader profesional Indonesia.</p>
+          <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1rem;padding:0.55rem 1.2rem;font-size:0.82rem">
+            &#128722; lynk.id/ipidigital
+          </a>
         </div>
         <div class="footer-links">
           <h4>Navigasi</h4>
           <ul>
             <li><a href="#hero">Beranda</a></li>
-            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#about">Tentang</a></li>
             <li><a href="#products">Produk</a></li>
+            <li><a href="#backtest">Backtest</a></li>
             <li><a href="#testimonials">Testimoni</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Kontak</a></li>
@@ -284,40 +357,42 @@
         <div class="footer-links">
           <h4>Produk</h4>
           <ul>
-            <li><a href="#products">Elektronik</a></li>
-            <li><a href="#products">Aksesori</a></li>
-            <li><a href="#products">Software</a></li>
-            <li><a href="#contact">Pemesanan</a></li>
+            <li><a href="#products">Neurobro Prompt</a></li>
+            <li><a href="#products">AI Trade Signaler</a></li>
+            <li><a href="#products">Sniper Claude AI</a></li>
+            <li><a href="#products">EA Trend Following</a></li>
+            <li><a href="#products">Indikator TV V6</a></li>
+            <li><a href="#products">AI Crypto Signal</a></li>
           </ul>
         </div>
         <div class="footer-social-col">
           <h4>Ikuti Kami</h4>
           <div class="social-icons">
+            <a href="#" aria-label="Telegram" class="social-tg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.016 9.506c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.396 14.29l-2.95-.924c-.642-.204-.655-.642.136-.953l11.527-4.447c.535-.194 1.003.13.453.282z"/></svg>
+            </a>
             <a href="#" aria-label="Instagram" class="social-ig">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="#" aria-label="Twitter/X" class="social-tw">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#" aria-label="Facebook" class="social-fb">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </a>
             <a href="#" aria-label="YouTube" class="social-yt">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
+            <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" aria-label="Lynk.id" class="social-lk">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </a>
           </div>
           <div class="footer-badges">
-            <span class="badge-item">&#128274; SSL Secured</span>
-            <span class="badge-item">&#9989; Verified Store</span>
+            <span class="badge-item">&#9889; Digital Instant</span>
+            <span class="badge-item">&#128274; Secure Payment</span>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 IPISTORE. All rights reserved. Made with &#10084; in Indonesia.</p>
+        <p>&copy; 2026 IPIDIGITAL. All rights reserved. | <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" style="color:var(--blue)">lynk.id/ipidigital</a></p>
         <div class="footer-bottom-links">
+          <a href="#">Ketentuan Layanan</a>
           <a href="#">Kebijakan Privasi</a>
-          <a href="#">Syarat &amp; Ketentuan</a>
-          <a href="#">Sitemap</a>
+          <a href="#">Kebijakan Retur</a>
         </div>
       </div>
     </div>
