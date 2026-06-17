@@ -3,327 +3,465 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IPIDIGITAL – Tools Trading Cerdas: Indikator TradingView, EA MT5, dan AI Signaler terbaik untuk trader profesional." />
-  <title>IPIDIGITAL – Trading Cerdas dengan Tools Modern</title>
+  <meta name="description" content="IPI DIGITAL – Platform trading premium Indonesia. EA MT5 otomatis, Indikator TradingView presisi, Akademi Crypto terstruktur, dan VIP Membership." />
+  <meta name="keywords" content="EA MT5, indikator TradingView, robot trading, akademi crypto, trading otomatis, VIP trading Indonesia" />
+  <meta property="og:title" content="IPI DIGITAL – Platform Trading Terpercaya Indonesia" />
+  <meta property="og:description" content="Tools trading premium untuk trader Indonesia yang ingin lebih cerdas dan efisien." />
+  <meta property="og:type" content="website" />
+  <title>IPI DIGITAL – Platform Trading Terpercaya Indonesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- LOADING SCREEN -->
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo">IPI<span>DIGITAL</span></div>
-      <div class="loader-ticker" id="loaderTicker">Memuat data pasar...</div>
+  <!-- LOADER -->
+  <div class="loader" id="loader" role="status" aria-label="Memuat halaman">
+    <div class="loader-content">
+      <div class="loader-logo">IPI <span>DIGITAL</span></div>
       <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
     </div>
   </div>
 
   <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-hidden="true"></div>
 
   <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-brand">IPI<span>DIGITAL</span></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#hero">Beranda</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#products">Produk</a></li>
-      <li><a href="#backtest">Backtest</a></li>
-      <li><a href="#testimonials">Testimoni</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+  <header class="navbar" id="navbar">
+    <a href="#home" class="nav-brand" aria-label="IPI DIGITAL – Kembali ke Beranda">
+      IPI <span>DIGITAL</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+      <a href="#home">Beranda</a>
+      <a href="#products">Produk</a>
+      <a href="#why">Keunggulan</a>
+      <a href="#about">Tentang</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary nav-cta" id="navCta">Mulai Sekarang</a>
+    <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
-  </nav>
+  </header>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <canvas class="hero-particles" id="heroCanvas"></canvas>
-    <div class="hero-content">
-      <div class="hero-badge">&#9889; Trading Cerdas dengan Tools Modern</div>
-      <p class="hero-tag">Selamat Datang di</p>
-      <h1 class="hero-title">IPI<span>DIGITAL</span></h1>
-      <p class="hero-sub">
-        <span id="typewriter"></span><span class="cursor">|</span>
-      </p>
-      <div class="hero-btns">
-        <a href="#products" class="btn btn-primary">&#128200; Lihat Produk</a>
-        <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" class="btn btn-outline">&#128722; Beli di Lynk.id</a>
-      </div>
-      <div class="hero-trust">
-        <span>&#9989; 100% Digital</span>
-        <span>&#9989; Pengiriman Instan</span>
-        <span>&#9989; Support Aktif</span>
-        <span>&#9989; Terpercaya</span>
+  <section class="hero" id="home" aria-label="Beranda">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Dipercaya 500+ Trader Indonesia
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line" id="titleLine1">Trading Lebih Cerdas,</span>
+          <span class="title-line title-accent" id="titleLine2">Profit Lebih Konsisten.</span>
+        </h1>
+        <p class="hero-sub">
+          Platform tools trading premium Indonesia. Otomasi EA MT5, analisis indikator presisi, 
+          akademi terstruktur, dan komunitas VIP — semua dalam satu ekosistem.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary btn-lg">
+            Jelajahi Produk
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#why" class="btn btn-ghost btn-lg">Pelajari Lebih Lanjut</a>
+        </div>
+        <div class="hero-stats" role="list">
+          <div class="hero-stat" role="listitem">
+            <span class="stat-val" data-target="500">0</span><span class="stat-plus">+</span>
+            <span class="stat-lbl">Trader Aktif</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat" role="listitem">
+            <span class="stat-val">4</span>
+            <span class="stat-lbl">Produk Premium</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat" role="listitem">
+            <span class="stat-val" data-target="2">0</span><span class="stat-plus">+</span>
+            <span class="stat-lbl">Tahun Berpengalaman</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat" role="listitem">
+            <span class="stat-val">24/7</span>
+            <span class="stat-lbl">Support Aktif</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-grid"></div>
-    <!-- Live ticker bar -->
-    <div class="ticker-bar">
-      <div class="ticker-track" id="tickerTrack"></div>
-    </div>
-    <a href="#about" class="scroll-hint" aria-label="Scroll ke bawah">
-      <div class="scroll-arrow"></div>
+    <a href="#products" class="scroll-cue" aria-label="Gulir ke bagian produk">
+      <div class="scroll-cue-icon" aria-hidden="true"></div>
     </a>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Tentang Kami</span>
-        <h2 class="section-title">Trader <span>Cerdas</span> Pakai Tools Modern</h2>
-        <p class="section-sub">IPIDIGITAL hadir untuk membantu trader meningkatkan akurasi dan efisiensi trading mereka</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-text fade-in">
-          <p>
-            <strong>IPIDIGITAL</strong> adalah penyedia tools trading digital terpercaya yang menyediakan
-            Indikator TradingView, Expert Advisor MT5, dan AI Signaler berbasis kecerdasan buatan.
-          </p>
-          <p>
-            Kami percaya bahwa setiap trader — dari pemula hingga profesional — berhak mendapatkan
-            akses ke teknologi trading terbaik. Semua produk kami dirancang untuk membantu Anda
-            mengambil keputusan trading yang lebih akurat dan konsisten.
-          </p>
-          <div class="about-stats">
-            <div class="stat fade-in">
-              <span class="stat-num" data-target="500">0</span><span class="stat-suffix">+</span>
-              <p>Trader Aktif</p>
-            </div>
-            <div class="stat fade-in">
-              <span class="stat-num" data-target="14">0</span><span class="stat-suffix">x</span>
-              <p>Trade/Hari</p>
-            </div>
-            <div class="stat fade-in">
-              <span class="stat-num" data-target="42">0</span><span class="stat-suffix">%</span>
-              <p>Winrate</p>
-            </div>
-            <div class="stat fade-in">
-              <span class="stat-num" data-target="2">0</span><span class="stat-suffix">:1</span>
-              <p>Risk Reward</p>
-            </div>
-          </div>
-        </div>
-        <div class="about-cards">
-          <div class="about-card fade-in">
-            <div class="card-icon">&#129302;</div>
-            <h3>AI-Powered Signals</h3>
-            <p>Signaler berbasis Claude AI & ChatGPT yang dilatih khusus untuk analisis pasar kripto dan forex.</p>
-          </div>
-          <div class="about-card fade-in">
-            <div class="card-icon">&#128200;</div>
-            <h3>Indikator Presisi</h3>
-            <p>Indikator TradingView V6 dengan algoritma canggih untuk deteksi tren dan entry point akurat.</p>
-          </div>
-          <div class="about-card fade-in">
-            <div class="card-icon">&#129302;</div>
-            <h3>EA MT5 Otomatis</h3>
-            <p>Expert Advisor Trend Following untuk MT5 — trading otomatis 24 jam tanpa perlu monitor terus.</p>
-          </div>
-          <div class="about-card fade-in">
-            <div class="card-icon">&#128274;</div>
-            <h3>Support Aktif</h3>
-            <p>Tim kami siap membantu setup, konfigurasi, dan menjawab pertanyaan trading Anda.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PRODUCTS -->
-  <section class="products section" id="products">
+  <section class="products section" id="products" aria-label="Produk kami">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Katalog Produk</span>
-        <h2 class="section-title">Tools <span>Trading</span> Kami</h2>
-        <p class="section-sub">Pilih tools yang sesuai dengan gaya dan kebutuhan trading Anda</p>
+        <span class="section-label">Ekosistem Lengkap</span>
+        <h2 class="section-title">Empat Produk, <span>Satu Solusi</span></h2>
+        <p class="section-sub">Dari otomasi hingga edukasi — semua yang Anda butuhkan untuk trading yang lebih cerdas dan konsisten.</p>
       </div>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="ai">AI Signaler</button>
-        <button class="filter-btn" data-filter="indikator">Indikator</button>
-        <button class="filter-btn" data-filter="ea">EA / Bot</button>
-        <button class="filter-btn" data-filter="prompt">AI Prompt</button>
+      <div class="products-grid">
+
+        <!-- EA MT5 -->
+        <article class="product-card" data-color="blue" aria-label="Produk Expert Advisor MT5">
+          <div class="card-stripe card-stripe--blue" aria-hidden="true"></div>
+          <div class="card-top">
+            <span class="card-label">Otomasi</span>
+            <div class="card-icon card-icon--blue" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="8.5" cy="16" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="16" r="1" fill="currentColor" stroke="none"/></svg>
+            </div>
+          </div>
+          <h3 class="card-name">Expert Advisor MT5</h3>
+          <p class="card-tagline">Trading Otomatis 24 Jam Penuh</p>
+          <p class="card-desc">Biarkan algoritma bekerja untuk Anda. Strategi breakout dengan single entry — tidak ada martingale, tidak ada averaging, hanya eksekusi bersih dan konsisten.</p>
+          <ul class="card-features" aria-label="Fitur EA MT5">
+            <li>Breakout strategy single entry</li>
+            <li>Tanpa martingale & averaging</li>
+            <li>Rata-rata 1–2 trade per hari</li>
+            <li>Risk Reward 1:2, pertumbuhan stabil</li>
+            <li>Support instalasi & konfigurasi</li>
+            <li>Update berkala seumur hidup</li>
+          </ul>
+          <div class="card-backtest" aria-label="Data backtest EA MT5">
+            <div class="backtest-header">
+              <span>Hasil Backtest (Jan–Okt 2025)</span>
+              <span class="backtest-exchange">OKX</span>
+            </div>
+            <div class="backtest-metrics">
+              <div class="bt-metric"><span class="bt-val">±$6.620</span><span class="bt-key">Profit</span></div>
+              <div class="bt-metric"><span class="bt-val accent-green">1:2</span><span class="bt-key">Risk Reward</span></div>
+              <div class="bt-metric"><span class="bt-val accent-red">$105</span><span class="bt-key">Drawdown</span></div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-amount">Rp 3.000.000</span>
+            </div>
+            <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Beli Expert Advisor MT5">Dapatkan Akses</a>
+          </div>
+        </article>
+
+        <!-- INDIKATOR -->
+        <article class="product-card" data-color="cyan" aria-label="Produk Indikator TradingView V6">
+          <div class="card-stripe card-stripe--cyan" aria-hidden="true"></div>
+          <div class="card-top">
+            <span class="card-label">Analisis</span>
+            <div class="card-icon card-icon--cyan" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+          </div>
+          <h3 class="card-name">Indikator TradingView V6</h3>
+          <p class="card-tagline">Baca Pasar Sebelum Market Bergerak</p>
+          <p class="card-desc">Kombinasi canggih RSI, EMA, dan ATR yang memberikan sinyal entry dan exit akurat. Cocok untuk Forex, Crypto, dan Saham di semua timeframe.</p>
+          <ul class="card-features" aria-label="Fitur Indikator TradingView V6">
+            <li>Triple kombinasi RSI + EMA + ATR</li>
+            <li>Deteksi reversal & tren akurat</li>
+            <li>Sinyal BUY / SELL otomatis</li>
+            <li>Multi-market: Forex, Crypto, Saham</li>
+            <li>Panduan instalasi + optimasi lengkap</li>
+            <li>Kompatibel semua timeframe</li>
+          </ul>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-original" aria-label="Harga asli Rp 4.500.000">Rp 4.500.000</span>
+              <span class="price-amount">Rp 750.000</span>
+              <span class="price-badge">Hemat 83%</span>
+            </div>
+            <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan" aria-label="Beli Indikator TradingView V6">Dapatkan Indikator</a>
+          </div>
+        </article>
+
+        <!-- AKADEMI -->
+        <article class="product-card" data-color="green" aria-label="Produk Akademi Crypto IPI">
+          <div class="card-stripe card-stripe--green" aria-hidden="true"></div>
+          <div class="card-top">
+            <span class="card-label">Edukasi</span>
+            <div class="card-icon card-icon--green" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+          </div>
+          <h3 class="card-name">Akademi Crypto IPI</h3>
+          <p class="card-tagline">Dari Nol ke Trader Profesional</p>
+          <p class="card-desc">Kurikulum trading terstruktur yang dirancang untuk membawa Anda dari pemula absolut hingga trader yang percaya diri, disiplin, dan konsisten.</p>
+          <ul class="card-features" aria-label="Fitur Akademi Crypto IPI">
+            <li>Kurikulum terstruktur dari dasar</li>
+            <li>Materi trading Crypto, Forex & Saham</li>
+            <li>Teknikal & fundamental analisis</li>
+            <li>Manajemen risiko & psikologi trading</li>
+            <li>Akses seumur hidup ke semua materi</li>
+            <li>Mentor & komunitas berpengalaman</li>
+          </ul>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-amount">Hubungi Kami</span>
+            </div>
+            <a href="#contact" class="btn btn-outline-green" aria-label="Pelajari lebih lanjut tentang Akademi Crypto">Pelajari Lebih Lanjut</a>
+          </div>
+        </article>
+
+        <!-- VIP MEMBERSHIP -->
+        <article class="product-card product-card--vip" data-color="gold" aria-label="Produk VIP Membership">
+          <div class="vip-popular" aria-label="Produk paling populer">MOST POPULAR</div>
+          <div class="card-stripe card-stripe--gold" aria-hidden="true"></div>
+          <div class="card-top">
+            <span class="card-label card-label--gold">VIP Elite</span>
+            <div class="card-icon card-icon--gold" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+          </div>
+          <h3 class="card-name">VIP Membership</h3>
+          <p class="card-tagline">Sinyal Harian. Analisis Live. Komunitas Elite.</p>
+          <p class="card-desc">Bergabunglah dengan komunitas trader elite IPI DIGITAL. Sinyal harian, analisis live, akses semua tools, dan support prioritas penuh.</p>
+          <ul class="card-features" aria-label="Fitur VIP Membership">
+            <li>Sinyal trading harian (Crypto & XAU)</li>
+            <li>Live analisis market setiap pagi</li>
+            <li>Grup private eksklusif VIP</li>
+            <li>Akses semua produk IPI DIGITAL</li>
+            <li>Priority support 24/7</li>
+            <li>Weekly performance report</li>
+            <li>Sesi Q&amp;A dengan mentor bulanan</li>
+          </ul>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-amount price-gold">Hubungi Kami</span>
+            </div>
+            <a href="#contact" class="btn btn-gold" aria-label="Bergabung dengan VIP Membership">Bergabung Sekarang</a>
+          </div>
+        </article>
+
       </div>
-      <div class="product-grid" id="productGrid"></div>
     </div>
   </section>
 
-  <!-- BACKTEST -->
-  <section class="backtest section" id="backtest">
+  <!-- WHY CHOOSE US -->
+  <section class="why section" id="why" aria-label="Keunggulan IPI DIGITAL">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Data Performa</span>
-        <h2 class="section-title">Hasil <span>Backtest</span></h2>
-        <p class="section-sub">Data nyata dari pengujian strategi kami di exchange OKX</p>
+        <span class="section-label">Keunggulan Kami</span>
+        <h2 class="section-title">Mengapa Trader Memilih <span>IPI DIGITAL</span></h2>
+        <p class="section-sub">Kami tidak hanya menjual produk — kami membangun ekosistem yang mendukung perjalanan trading Anda.</p>
       </div>
-      <div class="backtest-grid">
-        <div class="backtest-card fade-in">
-          <div class="bt-icon">&#127381;</div>
-          <div class="bt-label">Exchange</div>
-          <div class="bt-value">OKX</div>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--blue" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Efisiensi Waktu</h3>
+          <p>Hemat 3–4 jam analisis harian. EA kami bekerja otomatis 24 jam saat Anda sibuk kerja, tidur, atau menjalani aktivitas lainnya.</p>
         </div>
-        <div class="backtest-card fade-in">
-          <div class="bt-icon">&#9878;&#65039;</div>
-          <div class="bt-label">Risk : Reward</div>
-          <div class="bt-value accent">1 : 2</div>
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--cyan" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <h3>Akurasi Sinyal</h3>
+          <p>Teknologi kombinasi RSI, EMA, dan ATR untuk sinyal yang lebih presisi. Kurangi noise, fokus pada setup yang benar-benar berkualitas tinggi.</p>
         </div>
-        <div class="backtest-card fade-in">
-          <div class="bt-icon">&#128293;</div>
-          <div class="bt-label">Trade Rate</div>
-          <div class="bt-value">14 trade/hari</div>
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--green" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h3>Edukasi Terstruktur</h3>
+          <p>Kurikulum trading sistematis dari dasar hingga mahir. Bukan sekadar teori — belajar dengan strategi nyata yang sudah terbukti di pasar.</p>
         </div>
-        <div class="backtest-card fade-in">
-          <div class="bt-icon">&#127919;</div>
-          <div class="bt-label">Winrate</div>
-          <div class="bt-value accent">42.8%</div>
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--gold" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Komunitas Aktif</h3>
+          <p>500+ trader aktif, diskusi harian, dan tim support yang selalu responsif. Trading tidak harus sendirian — berkembang bersama komunitas.</p>
         </div>
       </div>
-      <div class="backtest-note fade-in">
-        <p>&#9888;&#65039; <strong>Disclaimer:</strong> Data backtest adalah hasil pengujian historis dan bukan jaminan profit di masa depan. Trading aset kripto dan forex mengandung risiko. Selalu gunakan manajemen risiko yang baik.</p>
-      </div>
-      <div class="challenge-banner fade-in">
-        <div class="challenge-left">
-          <span class="section-label">Special Challenge</span>
-          <h3>Challenge Crypto &amp; XAU<br/>Modal <span class="accent">$10</span></h3>
-          <p>Uji strategi kami dengan modal minimal. Cocok untuk trader yang ingin memulai dengan risiko kecil sambil belajar.</p>
-          <a href="#contact" class="btn btn-primary">Ikut Challenge &#8594;</a>
+      <!-- Trust indicators -->
+      <div class="trust-row fade-in" aria-label="Indikator kepercayaan">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>100% Produk Original</span>
         </div>
-        <div class="challenge-right">
-          <div class="challenge-stat">
-            <span>Crypto</span><span class="tag">BTC / ETH / Alt</span>
-          </div>
-          <div class="challenge-stat">
-            <span>XAU/USD</span><span class="tag">Gold Trading</span>
-          </div>
-          <div class="challenge-stat">
-            <span>Modal Awal</span><span class="tag green">$10 saja!</span>
-          </div>
-          <div class="challenge-stat">
-            <span>Exchange</span><span class="tag">OKX</span>
-          </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Pengiriman Instan</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Support 24/7</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Terbukti &amp; Terverifikasi</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials section" id="testimonials">
+  <section class="testimonials section" id="testimonials" aria-label="Testimoni pelanggan">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Ulasan Trader</span>
-        <h2 class="section-title">Kata <span>Mereka</span></h2>
-        <p class="section-sub">Ratusan trader telah menggunakan tools IPIDIGITAL</p>
+        <h2 class="section-title">Kata Mereka yang <span>Sudah Bergabung</span></h2>
+        <p class="section-sub">Bukan sekadar klaim — ini pengalaman nyata dari trader yang sudah menggunakan IPI DIGITAL.</p>
       </div>
-      <div class="testi-wrapper">
-        <div class="testi-track" id="testiTrack"></div>
+      <div class="testi-outer">
+        <div class="testi-wrapper" aria-live="polite">
+          <div class="testi-track" id="testiTrack"></div>
+        </div>
+        <button class="testi-arrow testi-arrow--prev" id="testiPrev" aria-label="Testimoni sebelumnya">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="testi-arrow testi-arrow--next" id="testiNext" aria-label="Testimoni selanjutnya">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
-      <div class="testi-dots" id="testiDots"></div>
-      <div class="testi-nav">
-        <button class="testi-btn" id="testiPrev" aria-label="Sebelumnya">&#8592;</button>
-        <button class="testi-btn" id="testiNext" aria-label="Selanjutnya">&#8594;</button>
+      <div class="testi-dots" id="testiDots" role="tablist" aria-label="Pilih testimoni"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about" aria-label="Tentang IPI DIGITAL">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left fade-in">
+          <span class="section-label">Tentang IPI DIGITAL</span>
+          <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem">Platform yang Dibangun<br/><span>oleh Trader, untuk Trader.</span></h2>
+          <p class="about-story">IPI DIGITAL lahir dari frustrasi nyata seorang trader — terlalu banyak waktu habis untuk analisis manual, terlalu banyak emosi yang mengacaukan keputusan, dan tidak ada sumber edukasi yang benar-benar terstruktur.</p>
+          <p class="about-story">Kami membangun IPI DIGITAL sebagai jawabannya: platform yang menggabungkan teknologi trading modern dengan edukasi solid dan komunitas yang suportif — semua dalam satu ekosistem yang mudah diakses.</p>
+          <div class="about-tags" aria-label="Nilai-nilai IPI DIGITAL">
+            <span class="about-tag">Inovatif</span>
+            <span class="about-tag">Transparan</span>
+            <span class="about-tag">Terstruktur</span>
+            <span class="about-tag">Terpercaya</span>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="vm-card fade-in">
+            <div class="vm-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3>Visi</h3>
+            <p>Menjadi ekosistem trading terlengkap dan terpercaya di Indonesia yang memberdayakan setiap trader untuk mencapai potensi terbaik mereka.</p>
+          </div>
+          <div class="vm-card fade-in">
+            <div class="vm-icon vm-icon--blue" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Misi</h3>
+            <p>Memberdayakan trader Indonesia dengan tools modern, pengetahuan terstruktur, dan komunitas aktif — sehingga trading menjadi lebih cerdas, lebih efisien, dan lebih konsisten.</p>
+          </div>
+          <div class="about-metrics" aria-label="Metrik IPI DIGITAL">
+            <div class="metric fade-in"><span class="metric-val">500+</span><span class="metric-lbl">Trader Aktif</span></div>
+            <div class="metric fade-in"><span class="metric-val">4</span><span class="metric-lbl">Produk Premium</span></div>
+            <div class="metric fade-in"><span class="metric-val">2+</span><span class="metric-lbl">Tahun Aktif</span></div>
+            <div class="metric fade-in"><span class="metric-val">24/7</span><span class="metric-lbl">Support</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="faq section" id="faq">
+  <section class="faq section" id="faq" aria-label="Pertanyaan yang sering ditanyakan">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Pertanyaan Umum</span>
-        <h2 class="section-title">FAQ <span>Trading</span></h2>
-        <p class="section-sub">Pertanyaan yang sering ditanyakan seputar produk dan layanan kami</p>
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Pertanyaan yang <span>Sering Ditanyakan</span></h2>
+        <p class="section-sub">Tidak menemukan jawaban yang Anda cari? Hubungi tim kami langsung.</p>
       </div>
-      <div class="faq-grid" id="faqGrid"></div>
+      <div class="faq-list" id="faqList" role="list"></div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-label="Mulai sekarang">
+    <div class="container">
+      <div class="cta-inner fade-in">
+        <div class="cta-left">
+          <h2>Siap Trading Lebih Cerdas?</h2>
+          <p>Bergabung dengan 500+ trader yang sudah menggunakan ekosistem IPI DIGITAL.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#products" class="btn btn-primary btn-lg">Lihat Semua Produk</a>
+          <a href="#contact" class="btn btn-ghost btn-lg">Konsultasi Gratis</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact section" id="contact">
+  <section class="contact section" id="contact" aria-label="Hubungi kami">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Hubungi Kami</span>
-        <h2 class="section-title">Siap <span>Mulai Trading?</span></h2>
-        <p class="section-sub">Konsultasi gratis, kami bantu pilih tools yang tepat untuk Anda</p>
+        <h2 class="section-title">Ada Pertanyaan? <span>Kami Siap Membantu.</span></h2>
+        <p class="section-sub">Konsultasi gratis, tidak ada kewajiban. Kami bantu Anda menemukan produk yang paling tepat.</p>
       </div>
       <div class="contact-grid">
-        <div class="contact-info fade-in">
-          <div class="info-item">
-            <span class="info-icon">&#128279;</span>
-            <div>
-              <h4>Toko Online</h4>
-              <p><a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" style="color:var(--blue)">lynk.id/ipidigital</a></p>
+        <div class="contact-left fade-in">
+          <div class="contact-info-item">
+            <div class="ci-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2H3v16h5l3 3 3-3h7V2z"/></svg>
             </div>
+            <div><h4>Respons Cepat</h4><p>Kami merespons dalam kurang dari 24 jam di hari kerja.</p></div>
           </div>
-          <div class="info-item">
-            <span class="info-icon">&#128172;</span>
-            <div>
-              <h4>WhatsApp / Telegram</h4>
-              <p>Hubungi kami untuk pembelian &amp; support langsung</p>
+          <div class="contact-info-item">
+            <div class="ci-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
+            <div><h4>Produk Digital Instan</h4><p>Setelah pembayaran dikonfirmasi, produk langsung dikirim.</p></div>
           </div>
-          <div class="info-item">
-            <span class="info-icon">&#9200;</span>
-            <div>
-              <h4>Jam Respon</h4>
-              <p>Setiap hari 08.00 – 22.00 WIB</p>
+          <div class="contact-info-item">
+            <div class="ci-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
+            <div><h4>Konsultasi Gratis</h4><p>Tidak tahu produk mana yang cocok? Tanya kami dulu.</p></div>
           </div>
-          <div class="info-item">
-            <span class="info-icon">&#9889;</span>
-            <div>
-              <h4>Pengiriman Produk</h4>
-              <p>Instan setelah pembayaran dikonfirmasi</p>
-            </div>
-          </div>
-          <div class="cta-box fade-in">
-            <h4>Beli Langsung di Toko Kami</h4>
-            <p>Pembayaran mudah dan produk langsung dikirim setelah konfirmasi.</p>
-            <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1rem">
-              &#128722; Kunjungi Lynk.id/ipidigital
-            </a>
-          </div>
+          <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener noreferrer" class="btn btn-outline-blue contact-store-btn" aria-label="Kunjungi toko IPI DIGITAL di Lynk.id">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Beli di lynk.id/ipidigital
+          </a>
         </div>
-        <form class="contact-form fade-in" id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="cname">Nama <span class="required">*</span></label>
-            <input type="text" id="cname" placeholder="Nama Anda" required autocomplete="name" />
-            <span class="field-error" id="nameError"></span>
+        <form class="contact-form fade-in" id="contactForm" novalidate aria-label="Formulir kontak">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Nama <span class="req" aria-label="wajib diisi">*</span></label>
+              <input type="text" id="fname" name="fname" placeholder="Nama Anda" required autocomplete="given-name" />
+              <span class="form-error" id="fnameErr" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="fcontact">WhatsApp / Email <span class="req" aria-label="wajib diisi">*</span></label>
+              <input type="text" id="fcontact" name="fcontact" placeholder="+62 atau email@anda.com" required autocomplete="tel" />
+              <span class="form-error" id="fcontactErr" role="alert"></span>
+            </div>
           </div>
           <div class="form-group">
-            <label for="cemail">Email / WhatsApp <span class="required">*</span></label>
-            <input type="text" id="cemail" placeholder="Email atau nomor WhatsApp Anda" required />
-            <span class="field-error" id="emailError"></span>
-          </div>
-          <div class="form-group">
-            <label for="cproduct">Produk yang Diminati</label>
-            <select id="cproduct">
-              <option value="">-- Pilih Produk --</option>
-              <option>Neurobro Prompt (Basic / Pro / Ultra)</option>
-              <option>Latih ChatGPT / Claude Jadi AI Trade Signaler</option>
-              <option>Sniper Claude AI Signaler</option>
-              <option>Trend Following EA MT5</option>
-              <option>Indikator TradingView V6</option>
-              <option>AI Crypto Signal (FREE)</option>
-              <option>Challenge Crypto &amp; XAU</option>
-              <option>Lainnya / Konsultasi</option>
+            <label for="fproduct">Produk yang Diminati</label>
+            <select id="fproduct" name="fproduct">
+              <option value="">-- Pilih produk (opsional) --</option>
+              <option value="ea">Expert Advisor MT5</option>
+              <option value="indikator">Indikator TradingView V6</option>
+              <option value="akademi">Akademi Crypto IPI</option>
+              <option value="vip">VIP Membership</option>
+              <option value="konsultasi">Konsultasi / Belum Tahu</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="cmessage">Pesan <span class="required">*</span></label>
-            <textarea id="cmessage" rows="4" placeholder="Ceritakan kebutuhan trading Anda, pengalaman, dan pertanyaan..." required></textarea>
-            <span class="field-error" id="messageError"></span>
+            <label for="fmessage">Pesan <span class="req" aria-label="wajib diisi">*</span></label>
+            <textarea id="fmessage" name="fmessage" rows="4" placeholder="Ceritakan kebutuhan trading Anda — pengalaman, pertanyaan, atau apa yang ingin Anda capai..." required></textarea>
+            <span class="form-error" id="fmessageErr" role="alert"></span>
           </div>
-          <button type="submit" class="btn btn-primary" id="submitBtn">
-            <span id="submitText">&#128231; Kirim Pesan</span>
-            <span id="submitSpinner" class="spinner" style="display:none"></span>
+          <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitBtn">
+            <span id="btnText">Kirim Pesan</span>
+            <span id="btnSpinner" class="btn-spinner" aria-hidden="true" style="display:none"></span>
           </button>
-          <p class="form-success" id="formSuccess">
-            &#10003; Pesan terkirim! Kami akan segera menghubungi Anda.
+          <p class="form-success" id="formSuccess" role="status">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Pesan terkirim! Kami akan menghubungi Anda segera.
           </p>
         </form>
       </div>
@@ -331,75 +469,76 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
+  <footer class="footer" aria-label="Footer IPI DIGITAL">
+    <div class="footer-top-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="footer-top">
+      <div class="footer-grid">
         <div class="footer-brand">
-          <div class="nav-brand footer-logo">IPI<span>DIGITAL</span></div>
-          <p>Tools Trading Cerdas — Indikator, EA MT5, dan AI Signaler untuk trader profesional Indonesia.</p>
-          <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1rem;padding:0.55rem 1.2rem;font-size:0.82rem">
-            &#128722; lynk.id/ipidigital
-          </a>
+          <a href="#home" class="nav-brand footer-logo" aria-label="IPI DIGITAL – Kembali ke beranda">IPI <span>DIGITAL</span></a>
+          <p>Platform trading premium Indonesia. Tools, edukasi, dan komunitas untuk trader yang ingin berkembang lebih cerdas.</p>
+          <div class="footer-social" aria-label="Media sosial IPI DIGITAL">
+            <a href="#" aria-label="Telegram IPI DIGITAL" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.016 9.506c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.396 14.29l-2.95-.924c-.642-.204-.655-.642.136-.953l11.527-4.447c.535-.194 1.003.13.453.282z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram IPI DIGITAL" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube IPI DIGITAL" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="footer-links">
+        <div class="footer-col">
+          <h4>Produk</h4>
+          <ul>
+            <li><a href="#products">Expert Advisor MT5</a></li>
+            <li><a href="#products">Indikator TradingView V6</a></li>
+            <li><a href="#products">Akademi Crypto IPI</a></li>
+            <li><a href="#products">VIP Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
           <h4>Navigasi</h4>
           <ul>
-            <li><a href="#hero">Beranda</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#products">Produk</a></li>
-            <li><a href="#backtest">Backtest</a></li>
-            <li><a href="#testimonials">Testimoni</a></li>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#why">Keunggulan</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Kontak</a></li>
           </ul>
         </div>
-        <div class="footer-links">
-          <h4>Produk</h4>
+        <div class="footer-col">
+          <h4>Toko Online</h4>
           <ul>
-            <li><a href="#products">Neurobro Prompt</a></li>
-            <li><a href="#products">AI Trade Signaler</a></li>
-            <li><a href="#products">Sniper Claude AI</a></li>
-            <li><a href="#products">EA Trend Following</a></li>
-            <li><a href="#products">Indikator TV V6</a></li>
-            <li><a href="#products">AI Crypto Signal</a></li>
+            <li><a href="https://lynk.id/ipidigital" target="_blank" rel="noopener noreferrer">lynk.id/ipidigital</a></li>
           </ul>
-        </div>
-        <div class="footer-social-col">
-          <h4>Ikuti Kami</h4>
-          <div class="social-icons">
-            <a href="#" aria-label="Telegram" class="social-tg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.016 9.506c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.396 14.29l-2.95-.924c-.642-.204-.655-.642.136-.953l11.527-4.447c.535-.194 1.003.13.453.282z"/></svg>
-            </a>
-            <a href="#" aria-label="Instagram" class="social-ig">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="#" aria-label="YouTube" class="social-yt">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" aria-label="Lynk.id" class="social-lk">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </a>
-          </div>
-          <div class="footer-badges">
-            <span class="badge-item">&#9889; Digital Instant</span>
-            <span class="badge-item">&#128274; Secure Payment</span>
+          <div class="footer-badges" aria-label="Jaminan kualitas">
+            <span class="footer-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              100% Original
+            </span>
+            <span class="footer-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Instan Delivery
+            </span>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 IPIDIGITAL. All rights reserved. | <a href="https://lynk.id/ipidigital" target="_blank" rel="noopener" style="color:var(--blue)">lynk.id/ipidigital</a></p>
+        <p>&copy; 2026 IPI DIGITAL. Hak cipta dilindungi.</p>
         <div class="footer-bottom-links">
-          <a href="#">Ketentuan Layanan</a>
           <a href="#">Kebijakan Privasi</a>
-          <a href="#">Kebijakan Retur</a>
+          <a href="#">Syarat &amp; Ketentuan</a>
+          <a href="#">Disclaimer Trading</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">&#8679;</button>
+  <button class="back-top" id="backTop" aria-label="Kembali ke atas halaman">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
